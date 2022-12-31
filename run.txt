@@ -1,0 +1,1 @@
+gcc main.cpp KNN.cpp Graph.cpp Point.cpp -o main -I/usr/include/opencv4/ -lopencv_core -lopencv_videoio -lopencv_highgui -lstdc++ -lm -lopencv_imgproc
