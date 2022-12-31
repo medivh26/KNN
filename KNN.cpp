@@ -1,23 +1,25 @@
-#include "KNN.h"
+#include "KNN.h" // include the KNN class
 
-typedef set<pair<double, double> > Mid;
 
 // constructor set k values , create samples and testing point.
 KNN::KNN(int k)
 {
-	setK(k);
-	createSamplePoints();
-	createTestingPoints();
+	setK(k); // set the K
+	createSamplePoints(); // create sample points
+	createTestingPoints(); // create testing points
 }
 
+// destructor
 KNN::~KNN()
 {
 }
+
 // Used to sort an vector of points' distance  
 bool comparison(Point a, Point b)
 {
 	return (a.getDistance() < b.getDistance());
 }
+
 // Used in the count_if function that count the category IDs in the specified range to store
 bool catIs_1(Point c) 
 { 
@@ -31,6 +33,7 @@ bool catIs_3(Point c)
 {
 	return (c.getCategoryID() == 2);
 }
+
 // Function to set the K 
 void KNN::setK(int k)
 {
@@ -53,8 +56,8 @@ void KNN::setK(int k)
 	}
 
 }
-//I created the examples in two different ways.
-//In both methods, randomly, but the part in the comment line prevents conflicts by using set.
+
+// Create Sample Points 
 void KNN::createSamplePoints()
 {
 	//create samples point 
@@ -73,32 +76,9 @@ void KNN::createSamplePoints()
 		}
 		samples.push_back(point);
 	}
-	/*
-	Mid set;
-	int i = 0;
-	while (set.size() < 30) {
-		pair<double, double> temp((rand() % 11 - 5), (rand() % 11 - 5));
-		set.insert(Mid::value_type(temp));
-	}
-	for (Mid::const_iterator it = set.begin(); it != set.end(); ++it)
-	{
-		Point point(i,it->first, it->second);
-		if (i < 10) {
-			point.setCategoryID(0);
-			samples.push_back(point);
-		}
-		else if (10 <= i && i < 20) {
-			point.setCategoryID(1);
-			samples.push_back(point);
-		}
-		else if(20<=i && i<30) {
-			point.setCategoryID(2);
-			samples.push_back(point);
-		}
-		i++;
-	}
-	*/
+
 }
+
 // Create Testing Point
 void KNN::createTestingPoints()
 {
@@ -108,21 +88,25 @@ void KNN::createTestingPoints()
 		testing_points.push_back(point);
 	}
 }
+
 // Function to retrieve K
 int KNN::getK() const
 {
 	return K;
 }
+
 // function to retrieve samples vector
 vector<Point> KNN::getSamplePoints() const
 {
 	return samples;
 }
+
 // function to retrieve testing_points vector
 vector<Point> KNN::getTestingPoints() const
 {
 	return testing_points;
 }
+
 // Print Samples Point and testing point
 void KNN::printData()
 {

@@ -1,8 +1,9 @@
-#include <iostream>
-#include "KNN.h"
-#include <iomanip>
-using namespace std;
+#include <iostream> // include the iostream library
+#include "KNN.h" // include the KNN class
+#include <iomanip> // include the iomanip library
+using namespace std; // use the standard namespace
 
+// Overload the << operator to print the training and testing data
 ostream& operator <<(ostream& output, const KNN& knn)
 {
     output << "Training Data" << endl;
@@ -24,6 +25,8 @@ ostream& operator <<(ostream& output, const KNN& knn)
 
     return output;
 }
+
+// Main function
 int main()
 {
     int k;
