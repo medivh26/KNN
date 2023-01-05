@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        "iomanip": "cpp",
+        "cmath": "cpp",
+        "array": "cpp",
+        "deque": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "string_view": "cpp",
+        "initializer_list": "cpp",
+        "ostream": "cpp",
+        "bitset": "cpp",
+        "utility": "cpp"
+    }
+}
